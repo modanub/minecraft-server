@@ -16,7 +16,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # NOTE: the "latest" variant is identified in the Docker meta step's 'latest' config
         variant:
           - java21-graalvm
           - java21
