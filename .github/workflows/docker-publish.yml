@@ -28,12 +28,12 @@ jobs:
       fail-fast: false
       matrix:
         variant:
-          - java8
+          - java11
         include:
         # JAVA 8: NOTE: Unable to go past 8u312 because of Forge dependencies
-          - variant: java8
-            baseImage: openjdk:8-jre-alpine3.9
-            platforms: linux/amd64
+          - variant: java11
+            baseImage: adoptopenjdk:11-jre-hotspot
+            platforms: linux/amd64,linux/arm/v7,linux/arm64
             mcVersion: 1.8.9
     runs-on: ubuntu-20.04  
     permissions:
