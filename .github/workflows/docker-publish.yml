@@ -28,12 +28,13 @@ jobs:
       fail-fast: false
       matrix:
         variant:
-          - java8
+          - java17
         include:
-        # JAVA 8: NOTE: Unable to go past 8u312 because of Forge dependencies
-          - variant: java8
-            baseImage: openjdk:8-jre-alpine3.9
-            platforms: linux/amd64
+          - variant: java17
+            # jammy doesn't work until minecraft updates to https://github.com/netty/netty/issues/12343
+            baseImage: eclipse-temurin:17-jre-focal
+            platforms: linux/amd64,linux/arm/v7,linux/arm64
+            mcVersion: latest
     runs-on: ubuntu-20.04  
     permissions:
       contents: read
