@@ -63,8 +63,9 @@ WORKDIR /data
 STOPSIGNAL SIGTERM
 
 # End user MUST set EULA and change RCON_PASSWORD
-ENV TYPE=PAPER PAPERBUILD=445 EULA="true" UID=1000 GID=1000 DIFFICULTY="peaceful" ANNOUNCE_PLAYER_ACHIEVEMENTS="false" ENABLE_COMMAND_BLOCK="false" FORCE_GAMEMODE="true"
-ENV SPAWN_MONSTERS="false" SPAWN_ANIMALS="false" SPAWN_NPCS="false" VIEW_DISTANCE="10" MODE="adventure" PVP="false" VERSION="1.8.8"
+ENV TYPE=PAPER EULA="true" UID=1000 GID=1000 DIFFICULTY="peaceful" ANNOUNCE_PLAYER_ACHIEVEMENTS="false" ENABLE_COMMAND_BLOCK="false"
+ENV SPAWN_MONSTERS="false" SPAWN_ANIMALS="false" SPAWN_NPCS="false" PVP="false"
+ENV PLUGINS=https://hangarcdn.papermc.io/plugins/ViaVersion/ViaRewind/versions/3.0.6/PAPER/ViaRewind-3.0.6.jar,https://hangarcdn.papermc.io/plugins/ViaVersion/ViaVersion/versions/4.9.3/PAPER/ViaVersion-4.9.3.jar,https://hangarcdn.papermc.io/plugins/ViaVersion/ViaBackwards/versions/4.9.2/PAPER/ViaBackwards-4.9.2.jar
 ENV ENABLE_AUTOSTOP="false"
 
 COPY --chmod=755 scripts/start* /
